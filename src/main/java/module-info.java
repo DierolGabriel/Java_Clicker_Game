@@ -10,6 +10,7 @@ module org.example.demo {
     requires java.desktop;
     requires annotations;
     requires org.apache.pdfbox;
+    requires javafx.media;
 
     opens Controllers_y_Main to javafx.fxml;
     exports Controllers_y_Main;
