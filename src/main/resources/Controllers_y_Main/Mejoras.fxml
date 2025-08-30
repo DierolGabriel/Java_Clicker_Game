@@ -36,5 +36,44 @@
             <Font name="Consolas Bold" size="22.0" />
          </font>
       </Label>
+      <Button fx:id="Click2" layoutX="15.0" layoutY="179.0" mnemonicParsing="false" onAction="#Click2" prefHeight="46.0" prefWidth="262.0" style="-fx-background-color: #8A4829;" styleClass="button4" stylesheets="@../CSS/Mejoras.css" text="+5 Cliks per second">
+         <font>
+            <Font name="Consolas Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="precioLabel2" layoutX="17.0" layoutY="225.0" prefHeight="34.0" prefWidth="220.0" text="Price: 100 clicks">
+         <font>
+            <Font name="Consolas Bold" size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="Click3" layoutX="15.0" layoutY="266.0" mnemonicParsing="false" onAction="#Click3" prefHeight="46.0" prefWidth="262.0" style="-fx-background-color: #8A4829;" styleClass="button4" stylesheets="@../CSS/Mejoras.css" text="+10 Cliks per second">
+         <font>
+            <Font name="Consolas Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="precioLabel3" layoutX="17.0" layoutY="312.0" prefHeight="34.0" prefWidth="220.0" text="Price: 500 clicks">
+         <font>
+            <Font name="Consolas Bold" size="22.0" />
+         </font>
+      </Label>
+      <Button fx:id="Click5" layoutX="15.0" layoutY="459.0" mnemonicParsing="false" onAction="#Click5" prefHeight="46.0" prefWidth="262.0" style="-fx-background-color: #8A4829;" styleClass="button4" stylesheets="@../CSS/Mejoras.css" text="Upgrade Button">
+         <font>
+            <Font name="Consolas Bold" size="20.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Label fx:id="precioLabel5" layoutX="17.0" layoutY="505.0" prefHeight="34.0" prefWidth="239.0" text="Price: 1,000 clicks">
+         <font>
+            <Font name="Consolas Bold" size="22.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

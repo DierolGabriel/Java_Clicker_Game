@@ -17,7 +17,20 @@ public class MejorasController {
     @FXML
     private Button Click1;
     @FXML
+    private Button Click2;
+    @FXML
+    private Button Click3;
+    @FXML
+    private Button Click5;
+
+    @FXML
     private Label precioLabel;
+    @FXML
+    private Label precioLabel2;
+    @FXML
+    private Label precioLabel3;
+    @FXML
+    private Label precioLabel5;
 
     private int precio = 10;
 
@@ -45,6 +58,21 @@ public class MejorasController {
         } else {
             precioLabel.setText("Price: " + precio + " clicks");
         }
+        if (MejorasManager.estaComprado("2")) {
+            Click2.setText("Comprado");
+            Click2.setDisable(true);
+            precioLabel2.setText("");
+        }
+        if (MejorasManager.estaComprado("3")) {
+            Click3.setText("Comprado");
+            Click3.setDisable(true);
+            precioLabel3.setText("");
+        }
+        if (MejorasManager.estaComprado("5")) {
+            Click5.setText("Comprado");
+            Click5.setDisable(true);
+            precioLabel5.setText("");
+        }
     }
 
     @FXML
@@ -59,4 +87,44 @@ public class MejorasController {
             Click1.setDisable(true);
         }
     }
+    @FXML
+    void Click2(ActionEvent event) {
+        if (contador >= 100) {
+            MejorasManager.guardarMejora("2");
+            contador -= 100;
+            Boton.cps += 5;
+
+            precioLabel2.setText("");
+            Click2.setText("Comprado");
+            Click2.setDisable(true);
+        }
+    }
+    @FXML
+    void Click3(ActionEvent event)
+    {
+        if (contador >= 500) {
+            MejorasManager.guardarMejora("3");
+            contador -= 500;
+            Boton.cps += 10;
+
+            precioLabel3.setText("");
+            Click3.setText("Comprado");
+            Click3.setDisable(true);
+        }
+    }
+
+    @FXML
+    void Click5(ActionEvent event)
+    {
+        if (contador >= 1000) {
+            MejorasManager.guardarMejora("5");
+            contador -= 1000;
+
+
+            precioLabel5.setText("");
+            Click5.setText("Comprado");
+            Click5.setDisable(true);
+        }
+    }
+
 }

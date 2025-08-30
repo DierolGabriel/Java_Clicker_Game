@@ -5,7 +5,8 @@ import java.io.*;
 public class MejorasManager {
     private static final String SAVE_FILE = "src/main/java/Controllers_y_Main/Save.txt";
 
-    public static void guardarMejora(String mejoraId) {
+    public static void guardarMejora(String mejoraId)
+    {
         try {
             BufferedWriter bw = new BufferedWriter(new FileWriter(SAVE_FILE, true));
             bw.write(mejoraId + "\n");
@@ -15,7 +16,8 @@ public class MejorasManager {
         }
     }
 
-    public static boolean estaComprado(String mejoraId) {
+    public static boolean estaComprado(String mejoraId)
+    {
         File saveFile = new File(SAVE_FILE);
         if (!saveFile.exists()) {
             return false;
@@ -37,7 +39,8 @@ public class MejorasManager {
         return false;
     }
 
-    public static void inicializarArchivoGuardado() {
+    public static void inicializarArchivoGuardado()
+    {
         File saveFile = new File(SAVE_FILE);
         if (!saveFile.exists()) {
             try {

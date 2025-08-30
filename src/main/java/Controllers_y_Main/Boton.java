@@ -37,6 +37,13 @@ public class Boton {
         if (MejorasManager.estaComprado("1")) {
             cps += 1;
         }
+        if (MejorasManager.estaComprado("2")) {
+            cps += 5;
+        }
+        if (MejorasManager.estaComprado("3")) {
+            cps += 10;
+        }
+
 
         iniciarCPS();
 
@@ -81,17 +88,17 @@ public class Boton {
     }
 
     private void actualizarColorBoton() {
-        if (contador < 10) {
+        if (contador < 50) {
             Boton.setStyle("-fx-background-color: #4CAF50;");
-        } else if (contador == 10) {
+        } else if (contador == 100) {
             Boton.setStyle("-fx-background-color: red;");
-        } else if (contador == 20) {
+        } else if (contador == 150) {
             Boton.setStyle("-fx-background-color: blue;");
-        } else if (contador == 30) {
-            Boton.setStyle("-fx-background-color: white;");
-        } else if (contador == 40) {
-            Boton.setStyle("-fx-background-color: gold;");
-        } else if (contador >= 50) {
+        } else if (contador == 200) {
+            Boton.setStyle("-fx-background-color: pink;");
+        } else if (contador == 250) {
+            Boton.setStyle("-fx-background-color: purple;");
+        } else if (contador >= 500) {
             int r = (int) (Math.random() * 256);
             int g = (int) (Math.random() * 256);
             int b = (int) (Math.random() * 256);
