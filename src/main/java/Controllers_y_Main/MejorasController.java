@@ -107,7 +107,7 @@ public class MejorasController {
         if (contador >= 500) {
             MejorasManager.guardarMejora("3");
             contador -= 500;
-            Boton.cps += 100;
+            Boton.cps += 10;
 
             precioLabel3.setText("");
             Click3.setText("Comprado");
