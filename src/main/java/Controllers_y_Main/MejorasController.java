@@ -1,5 +1,6 @@
 package Controllers_y_Main;
 
+import eu.hansolo.tilesfx.events.ChartDataEventListener;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,6 +10,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 
 import static Controllers_y_Main.Boton.contador;
@@ -105,7 +107,7 @@ public class MejorasController {
         if (contador >= 500) {
             MejorasManager.guardarMejora("3");
             contador -= 500;
-            Boton.cps += 10;
+            Boton.cps += 100;
 
             precioLabel3.setText("");
             Click3.setText("Comprado");
@@ -114,8 +116,7 @@ public class MejorasController {
     }
 
     @FXML
-    void Click5(ActionEvent event)
-    {
+    void Click5(ActionEvent event) {
         if (contador >= 1000) {
             MejorasManager.guardarMejora("5");
             contador -= 1000;
@@ -126,5 +127,4 @@ public class MejorasController {
             Click5.setDisable(true);
         }
     }
-
 }

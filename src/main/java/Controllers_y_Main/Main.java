@@ -10,6 +10,7 @@ import java.io.IOException;
 
 public class Main extends Application{
 
+
 @Override
 public void start(Stage stage) throws IOException {
     FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Boton.fxml"));
@@ -17,12 +18,19 @@ public void start(Stage stage) throws IOException {
     stage.setTitle("Boton");
     stage.setScene(scene);
     stage.show();
+    if(MejorasManager.estaComprado("5"))
+    {
+        stage.close();
+    }
+
 }
 
     public static void main(String[] args)
     {
         launch();
     }
+
+
 
     public static class HelloApplication extends Application
     {

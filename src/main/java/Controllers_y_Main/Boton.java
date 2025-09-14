@@ -7,17 +7,23 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+import javax.imageio.plugins.tiff.ExifInteroperabilityTagSet;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.swing.*;
 import java.io.File;
+import java.lang.classfile.instruction.ReturnInstruction;
 
-public class Boton {
+public class Boton{
 
-
+    @FXML
+    private ImageView Estrella;
     @FXML
     private Button Upgrades;
     @FXML
@@ -26,6 +32,9 @@ public class Boton {
     private Label Numero;
     @FXML
     private Label CPSLabel;
+    @FXML
+    private ToggleButton Toggle;
+
 
     public static int contador = 0;
     public static int cps = 0;
@@ -36,12 +45,12 @@ public class Boton {
 
         if (MejorasManager.estaComprado("1")) {
             cps += 1;
-        }
-        if (MejorasManager.estaComprado("2")) {
-            cps += 5;
+        if (MejorasManager.estaComprado("2")) {        }
+
+        cps += 5;
         }
         if (MejorasManager.estaComprado("3")) {
-            cps += 10;
+            cps += 100;
         }
 
 
@@ -63,9 +72,20 @@ public class Boton {
 
     private void iniciarCPS() {
         cpsTimeline = new Timeline(new KeyFrame(Duration.seconds(1), e -> {
+
             contador += cps;
             Numero.setText(String.valueOf(contador));
             CPSLabel.setText("CPS: " + cps);
+
+            if(MejorasManager.estaComprado("5"))
+            {
+                Boton.setVisible(false);
+            Toggle.setDisable(false);
+            Numero.setVisible(false);
+            CPSLabel.setVisible(false);
+            Upgrades.setVisible(false);
+            Estrella.setVisible(false);
+            }
         }));
         cpsTimeline.setCycleCount(Timeline.INDEFINITE);
         cpsTimeline.play();
@@ -87,18 +107,26 @@ public class Boton {
         actualizarColorBoton();
     }
 
-    private void actualizarColorBoton() {
-        if (contador < 50) {
+    private void actualizarColorBoton()
+    {
+        if (contador < 100)
+        {
             Boton.setStyle("-fx-background-color: #4CAF50;");
-        } else if (contador == 100) {
+        }
+        if (contador >= 100) {
             Boton.setStyle("-fx-background-color: red;");
-        } else if (contador == 150) {
+        }
+        if (contador >= 150) {
             Boton.setStyle("-fx-background-color: blue;");
-        } else if (contador == 200) {
+        }
+        if (contador >= 200) {
             Boton.setStyle("-fx-background-color: pink;");
-        } else if (contador == 250) {
+        }
+        if (contador >= 250) {
             Boton.setStyle("-fx-background-color: purple;");
-        } else if (contador >= 500) {
+        }
+        if (contador >= 500)
+        {
             int r = (int) (Math.random() * 256);
             int g = (int) (Math.random() * 256);
             int b = (int) (Math.random() * 256);
@@ -108,7 +136,8 @@ public class Boton {
     }
 
     @FXML
-    void Upgrade(ActionEvent event) {
+    void Upgrade(ActionEvent event)
+    {
         try {
             Stage stage = new Stage();
             MejorasController mejorasController = new MejorasController();
@@ -118,4 +147,23 @@ public class Boton {
         }
     }
 
+
+    @FXML
+    void Toggle(ActionEvent event)
+    {
+        if (Toggle.isSelected())
+        {
+            Toggle.setText("ON");
+        } else {
+            Toggle.setText("OFF");
+            Timeline timeline = new Timeline
+                    (
+                    new KeyFrame(Duration.seconds(1),event1 ->
+                    {
+                        Toggle.getScene().getWindow().hide();
+                    })
+            );
+            timeline.play();
+        }
+    }
 }

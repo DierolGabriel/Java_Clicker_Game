@@ -63,3 +63,33 @@
     opacity: 1;
     right: 0;
 }
+.root {
+    -fx-background-color: #ffcc8e;
+}
+
+.button1 {
+    -fx-display: inline-block;
+    -fx-margin: 20px;
+    -fx-font-family: "Helvetica", sans-serif;
+    -fx-font-weight: bold;
+    -fx-font-size: 36px;
+    -fx-text-fill: white;
+    -fx-alignment: center;
+    -fx-padding: 20px 40px;
+    -fx-effect: dropshadow(gaussian, #000, 1, 0.0, 0, 1);
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+}
+
+.button1:hover {
+    -fx-background-color: white;
+
+}
+
+.button1:pressed {
+    -fx-translate-y: 2px;
+}
+
+.button1 {
+    -fx-effect: dropshadow(three-pass-box, #2B1800, 10, 0, 0, 5);
+}
