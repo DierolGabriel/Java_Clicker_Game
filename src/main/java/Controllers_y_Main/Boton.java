@@ -50,7 +50,7 @@ public class Boton{
         cps += 5;
         }
         if (MejorasManager.estaComprado("3")) {
-            cps += 100;
+            cps += 10;
         }
 
 
