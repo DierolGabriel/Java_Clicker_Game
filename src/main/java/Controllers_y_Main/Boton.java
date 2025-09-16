@@ -153,9 +153,20 @@ public class Boton{
     {
         if (Toggle.isSelected())
         {
-            Toggle.setText("ON");
-        } else {
-            Toggle.setText("OFF");
+            Toggle.setStyle(Toggle.getStyle() + " -fx-background-color: red;");
+        } else
+        {
+            try {
+                String FilePath = "src/main/Resources/Imagenes/powerSound.wav";
+                AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(new File(FilePath));
+                Clip clip = AudioSystem.getClip();
+                clip.open(audioInputStream);
+                clip.start();
+            } catch (Exception e)
+            {
+                System.out.println("Error al cargar el sonido: " + e.getMessage());
+            }
+            Toggle.setText("Game Over");
             Timeline timeline = new Timeline
                     (
                     new KeyFrame(Duration.seconds(1),event1 ->
